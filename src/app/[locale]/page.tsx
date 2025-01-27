@@ -11,10 +11,11 @@ export default function Home() {
 
 
   return (
-    <div className="items-center min-h-screen p-8 pt-16 pb-20 gap-16 sm:p-20">
-      <div className="items-center">
-        <h1 className="text-7xl">Hi! I'm <span className="text-hover-900">Irene</span></h1>
-        <div className="flex gap-1">
+    <div className="flex items-center min-h-screen p-8 pt-16 pb-20 gap-16 sm:p-20">
+      {/* Information */}
+      <div className="">
+        <h1 className="text-7xl mb-6">Hi! I'm <span className="text-hover-900">Irene</span></h1>
+        <div className="flex gap-2 mb-6 text-3xl">
           <p>I'm a </p>
           <ul>
             {professions.map((item, index) => {
@@ -44,6 +45,10 @@ export default function Home() {
             {t('view-project-button')}
           </Link>
         </div>
+      </div>
+      {/* Image */}
+      <div>
+
       </div>
     </div>
   );

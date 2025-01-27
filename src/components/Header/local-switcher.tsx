@@ -33,12 +33,12 @@ export default function LocalSwitcher() {
             defaultValue={localActive}
               name="lang"
               id="lang"
-              className='text-base bg-main-500 border-2 border-opacity-50 rounded-sm text-white cursor-pointer w-[100px]'
+              className='text-base bg-transparent border-2 border-opacity-50 rounded-sm text-white cursor-pointer w-[100px]'
               onChange={onSelectChange}
               disabled={isPending}
             >
                 {languages.map((item, index) => (
-                    <option value={item.code} key={index}>{item.title}</option>
+                    <option value={item.code} key={index} className='text-main-900'>{item.title}</option>
                 ))}
             </select>
         </>

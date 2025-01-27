@@ -25,6 +25,10 @@ const Header = () => {
     setIsSideBarOpen(!isSidebarOpen);
   };
 
+  const getCleanedPathname = (pathname: string) => {
+    return pathname.replace(/\/(en|vie)\//, '/'); // Removes '/en' or '/vie' from the beginning
+  };
+
   return (
     <>
       <div className="bg-main-500 w-full h-16 fixed flex items-center px-10 md:px-20 lg:px-28 xl:px-36 2xl:px-40 justify-between">
@@ -33,7 +37,8 @@ const Header = () => {
         </div>
         <div className="w-full flex justify-center items-center gap-4 md:inline-flex hidden">
           {navigations.map((item, index) => {
-            const isActive = item.url && pathname === item.url;
+            const isActive = item.url && getCleanedPathname(pathname) === getCleanedPathname(item.url);
+            console.log(pathname, getCleanedPathname(pathname));
             return (
               <Link
                 key={index}
