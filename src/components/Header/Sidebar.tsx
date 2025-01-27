@@ -2,20 +2,25 @@
 
 import { usePathname } from 'next/navigation';
 import { FC } from 'react';
-import { HeaderData } from './Links';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 import CloseIcon from '@mui/icons-material/Close';
 
 interface SideBarProps {
     isOpen: boolean;
     toggleSidebar: () => void;
-    language: 'en' | 'vie'; // Accept language as a prop
 }
 
-const SideBar: FC<SideBarProps> = ({ isOpen, toggleSidebar, language }) => {
+const SideBar: FC<SideBarProps> = ({ isOpen, toggleSidebar }) => {
 
     const pathname = usePathname(); 
+
+    const t = useTranslations('Nav');
+    const rawNavigations = t.raw('navigation'); // Fetch the raw object
+    const navigations = Object.keys(rawNavigations).map((key) => ({
+        ...rawNavigations[key],
+    }));
 
     return (
         <div
@@ -30,7 +35,7 @@ const SideBar: FC<SideBarProps> = ({ isOpen, toggleSidebar, language }) => {
                 />
             </div>
             <div className='flex flex-col items-center'>
-                {HeaderData.map((item, index) => {
+                {navigations.map((item, index) => {
                     const isActive = Array.isArray(item.url)
                         ? item.url.includes(pathname)
                         : pathname === item.url;
@@ -43,7 +48,7 @@ const SideBar: FC<SideBarProps> = ({ isOpen, toggleSidebar, language }) => {
                             key={index}
                             href={Array.isArray(item.url) ? item.url[0] : item.url} // Use href here
                         >
-                            {item.title[language]}
+                            {item.title}
                         </Link>
                     );
                 })}

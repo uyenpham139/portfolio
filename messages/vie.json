@@ -1,0 +1,38 @@
+{   
+    "Nav": {
+        "navigation": {
+            "home": {
+                "title": "Trang chủ",
+                "url": "/"
+            },
+            "about": {
+                "title": "Giới thiệu",
+                "url": "/about"
+            },
+            "project": {
+                "title": "Dự án",
+                "url": "/project"
+            },
+            "contact": {
+                "title": "Liên hệ",
+                "url": "/contact"
+            },
+            "viewCV": {
+                "title": "Tải CV",
+                "url": "/viewCV"
+            }
+        },
+        "language": {
+            "english": {"code": "en", "title": "Tiếng Anh"} ,
+            "vietnamese": {"code": "vie", "title":"Tiếng Việt"}
+        }
+    },
+
+    "HomePage": {
+        "title": "Hello world!",
+        "about": "Go to the about page",
+        "professions": ["Software Engineer", "UX/UI Designer"],
+        "view-cv-button": "Xem CV",
+        "view-project-button": "Xem Dự án" 
+    }
+}

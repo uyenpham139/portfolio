@@ -1,0 +1,41 @@
+{   
+    "Nav": {
+        "navigation": {
+            "home": {
+                "title": "Home",
+                "url": "/"
+            },
+            "about": {
+                "title": "About",
+                "url": "/about"
+            },
+            "project": {
+                "title": "Project",
+                "url": "/project"
+            },
+            "contact": {
+                "title": "Contact",
+                "url": "/contact"
+            },
+            "viewCV": {
+                "title": "Download CV",
+                "url": "/viewCV"
+            }
+        },
+        "language": {
+            "english": {"code": "en", "title": "English"} ,
+            "vietnamese": {"code": "vie", "title":"Vietnamese"}
+        }
+    },
+
+    "HomePage": {
+        "title": "Hello world!",
+        "about": "Go to the about page",
+        "professions": {
+            "pro-1": "Software Engineer", 
+            "pro-2": "UX/UI Designer"
+        },
+        "view-cv-button": "View CV",
+        "view-project-button": "View Project" 
+    }
+}
